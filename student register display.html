@@ -1,0 +1,89 @@
+<?php
+$user = 'root';
+$password = '';
+$database = 'college';
+$servername = 'localhost';
+$mysqli = new mysqli($servername, $user, $password, $database);
+
+if (!$mysqli->connect_error){
+	die('Connect Error (' .
+	$mysqli->connect_errno . ') '.
+	$mysqli->connect_error);
+}
+
+$sql = "SELECT * FROM studentregister ORDER BY score DESC ";
+$result = $mysqli->query($sql);
+$mysqli->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		table{
+			margin: 0 auto;
+			font-size: large;
+			border: 1px solid black;
+		}
+		
+		h1{
+			text-align: center;
+			color: #006600;
+			font-size: xx-large;
+		}
+		
+		td{
+			background-color: #e4f5d4;
+			border:1px solid black;
+		}
+		
+		th,
+		td{
+			font-weight: bold;
+			border: 1px solid black;
+			padding: 10px;
+			text-align: center;
+		}
+		
+		td{
+			font-weight: lighter;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>Student Database</h1>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Course</th>
+				<th>Batch Name</th>
+				<th>Roll</th>
+				<th>Address</th>
+				<th>Mail</th>
+				<th>Phone</th>
+				<th>Class starting date</th>
+			</tr>
+			
+			<?php
+				while($rows=$result->fetch_assoc())
+				{
+			?>
+			<tr>
+				<td><?php echo $rows['Name'];?></td>
+				<td><?php echo $rows['Course'];?></td>
+				<td><?php echo $rows['BatchName'];?></td>
+				<td><?php echo $rows['Roll'];?></td>
+				<td><?php echo $rows['Address'];?></td>
+				<td><?php echo $rows['Mail'];?></td>
+				<td><?php echo $rows['Phone'];?></td>
+				<td><?php echo $rows['ClassSartingDate'];?></td>
+			</tr>
+			<?php
+				}
+			?>
+		</table>
+	</section>
+</body>
+</html>

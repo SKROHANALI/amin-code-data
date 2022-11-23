@@ -1,0 +1,57 @@
+<html>
+<head>
+<style>
+button{
+	padding: 10px 25px;
+	border-radius: 5px;
+	color: #fff;
+	background-color: 34ce34;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	text-transformation: capitalize;
+	cursor: pointer;
+}
+</style>
+</head>
+<body bgcolor="pink">
+<center><font size=5 color="purple">
+<stronge> Fill the form below for creat an account</strong></font></center>
+<base font color=blue size=4>
+<hr>
+<form action="connect.php" method="POST">
+Enter your name:<br>
+<input type="text" name="name" size=30 placeholder="Enter your name here" required>
+<p>
+Select your position:<br>
+<input type="radio" id="" name="position" value=Admin required> Admin<br>
+<input type="radio" id="" name="position" value=Student required> Student
+<p>
+Enter your user id:<br>
+<input type="text" name="userid" size=60 placeholder="Enter your user id here" required>
+<p>
+Enter your password:(The password should be 8 words)<br>
+<input type="password" name="password" size=30 placeholder="Enter your password here" required>
+<p>
+Enter confirm password:(The password should be 8 words)<br>
+<input type="password" name="confirmpassword" size=30 placeholder="Enter confirm password here" required>
+<p>
+
+Upload your a passport size photo<br>
+<input type="file" name="file" size=40 >
+<p align="center">
+<button>
+Submit
+</button>
+</p>
+<p align="right">
+<table width="50" height="25" border="1" bgcolor="red">
+<tr>
+<td><a href="home.html">Back</a></p>
+</tr>
+</table>
+</b>
+</form>
+<hr>
+</body>
+</html>
